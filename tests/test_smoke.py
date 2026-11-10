@@ -2,11 +2,8 @@ import requests
 import pytest 
 
 
-BASE_URL = "http://localhost:3000"
-
-
-def test_products_edpoint_is_up():
-    response = requests.get(f"{BASE_URL}/api/products")
+def test_products_edpoint_is_up(base_url):
+    response = requests.get(f"{base_url}/api/products")
     assert response.status_code == 200
 
     products = response.json()
