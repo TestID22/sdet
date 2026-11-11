@@ -12,3 +12,8 @@ def api():
     yield session
     session.close()
 
+
+@pytest.fixture
+def all_products(base_url):
+    return requests.get(f"{base_url}/api/products").json()
+
